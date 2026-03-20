@@ -304,4 +304,3 @@ Search across the environment for:
 
 ---
 
-*Write-up by a junior SOC analyst — built from a real phishing sample for learning purposes.*
