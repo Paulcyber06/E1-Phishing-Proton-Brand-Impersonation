@@ -1,215 +1,227 @@
-# Email Phishing Analysis — Proton Brand Impersonation
+# Analyse de Phishing — Usurpation de la Marque Proton
 
-> In this write-up, I analyze a phishing email that impersonates **Proton**, with the goal of stealing the victim's credentials.
-
----
-
-## 📚 Table of Contents
-
-- [1. Context](#1-context)
-- [2. Initial Observation](#2-initial-observation)
-- [3. Email Content Analysis](#3-email-content-analysis)
-- [4. Malicious Link Analysis](#4-malicious-link-analysis)
-- [5. Email Header Analysis](#5-email-header-analysis)
-- [6. SPF / DKIM / DMARC Explained](#6-spf--dkim--dmarc-explained)
-- [7. Infrastructure Path](#7-infrastructure-path)
-- [8. Indicators of Compromise (IOC)](#8-indicators-of-compromise-ioc)
-- [9. SOC Verdict](#9-soc-verdict)
-- [10. SOC Operational Response](#10-soc-operational-response)
+> Dans ce write-up, j'analyse un email de phishing qui usurpe l'identité de **Proton**, dans le but de voler les identifiants de la victime.
 
 ---
 
-## 1. Context
+## 📚 Table des matières
 
-This analysis is based on a **suspicious email received in a Proton mailbox**.
+* [1. Contexte](#1-contexte)
+* [2. Observation initiale](#2-observation-initiale)
+* [3. Analyse du contenu de l'email](#3-analyse-du-contenu-de-lemail)
+* [4. Analyse du lien malveillant](#4-analyse-du-lien-malveillant)
+* [5. Analyse des en-têtes de l'email](#5-analyse-des-en-têtes-de-lemail)
+* [6. SPF / DKIM / DMARC expliqués](#6-spf--dkim--dmarc-expliqués)
+* [7. Chemin d'infrastructure](#7-chemin-dinfrastructure)
+* [8. Indicateurs de Compromission (IOC)](#8-indicateurs-de-compromission-ioc)
+* [9. Verdict SOC](#9-verdict-soc)
+* [10. Réponse opérationnelle SOC](#10-réponse-opérationnelle-soc)
 
-The message claims:
+---
 
-> *"A new application has access to your mail data"*
+## 1. Contexte
 
-The recipient is urged to click a button labelled:
+Cette analyse est basée sur un **email suspect reçu dans une boîte Proton**.
+
+Le message affirme :
+
+> *"Une nouvelle application a accès à vos données de messagerie"*
+
+Le destinataire est invité à cliquer sur un bouton intitulé :
 
 ```
 Security Portal
 ```
 
-However, Proton immediately displays an alert:
+Cependant, Proton affiche immédiatement une alerte :
 
-> **This email has failed its domain's authentication requirements.**
+> **Cet email n'a pas satisfait aux exigences d'authentification de son domaine.**
 
-This means the **sender domain authentication is failing** — a clear red flag.
-
----
-
-## 2. Initial Observation
-
-When opening the email, several elements stand out right away.
-
-![Phishing email impersonating Proton](01_phishing_email.jpg)
-
-### Visible warning signs
-
-| Signal | Detail |
-|--------|--------|
-| Proton branding copied | Logo and layout mimicked |
-| Fake security alert | "New app has access to your Mail data" |
-| Single action button | "Security Portal" — creates urgency |
-| Proton authentication warning | Displayed at the top of the email |
-
-> This is a classic phishing technique: **create a sense of urgency around account security** to push the victim to act without thinking.
+Cela signifie que l'**authentification du domaine expéditeur échoue** — un signal d'alerte évident.
 
 ---
 
-## 3. Email Content Analysis
+## 2. Observation initiale
 
-The email contains:
-- The Proton logo
-- A security warning message
-- A "Security Portal" call-to-action button
+À l'ouverture de l'email, plusieurs éléments attirent immédiatement l'attention.
 
-**Subject line:**
+![Email de phishing imitant Proton](01_phishing_email.jpg)
+
+### Signaux visibles
+
+| Signal | Détail |
+| --- | --- |
+| Identité visuelle Proton copiée | Logo et mise en page imités |
+| Fausse alerte de sécurité | "Une nouvelle application a accès à vos données" |
+| Bouton d'action unique | "Security Portal" — crée un sentiment d'urgence |
+| Avertissement d'authentification Proton | Affiché en haut de l'email |
+
+> Il s'agit d'une technique de phishing classique : **créer un sentiment d'urgence autour de la sécurité du compte** pour pousser la victime à agir sans réfléchir.
+
+---
+
+## 3. Analyse du contenu de l'email
+
+L'email contient :
+
+* Le logo Proton
+* Un message d'avertissement de sécurité
+* Un bouton d'action "Security Portal"
+
+**Objet du message :**
+
 ```
 New App Have Access To Your Mail Data
 ```
 
-### Red Flags
+### Signaux d'alerte
 
-#### ❌ Grammar error
-The subject line is grammatically incorrect (*"Have"* instead of *"Has"*).  
-Official emails from Proton are always reviewed before being sent.
+#### ❌ Erreur grammaticale
 
-#### ❌ No technical details
-A real security email from Proton would include:
-- Connection time
-- Device name
-- Location
-- Name of the application involved
+L'objet contient une faute de grammaire (*"Have"* au lieu de *"Has"*).  
+Les emails officiels de Proton sont systématiquement relus avant envoi.
 
-**None of these are present.**
+#### ❌ Aucun détail technique
 
-#### ❌ Single call-to-action
-The user is pushed to click immediately.  
-This is a **typical phishing characteristic**.
+Un vrai email de sécurité de Proton inclurait :
+
+* L'heure de connexion
+* Le nom de l'appareil
+* La localisation
+* Le nom de l'application concernée
+
+**Aucun de ces éléments n'est présent.**
+
+#### ❌ Appel à l'action unique
+
+L'utilisateur est poussé à cliquer immédiatement.  
+C'est une **caractéristique typique du phishing**.
 
 ---
 
-## 4. Malicious Link Analysis
+## 4. Analyse du lien malveillant
 
-By inspecting the HTML source code of the button:
+En inspectant le code source HTML du bouton :
 
-![HTML source showing the malicious link](02_html_source.jpg)
+![Code source HTML montrant le lien malveillant](02_html_source.jpg)
 
-```html
+```
 <a href="https://mailbox-rsl-recovery-mprtc.vercel.app/account/xpm-privacy-panel/?email=...">
   Security Portal
 </a>
 ```
 
-The link points to:
+Le lien pointe vers :
+
 ```
 vercel.app
 ```
 
-> ⚠️ **Proton does not use this domain.** This is an external platform used to host fake pages.
+> ⚠️ **Proton n'utilise pas ce domaine.** Il s'agit d'une plateforme externe utilisée pour héberger des pages frauduleuses.
 
-### Security interpretation
+### Interprétation sécurité
 
-The link most likely redirects to:
-- A fake login page
-- A phishing portal
-- A credential harvesting site
+Le lien redirige très probablement vers :
 
-This is a **critical phishing indicator**.
+* Une fausse page de connexion
+* Un portail de phishing
+* Un site de collecte d'identifiants
+
+Il s'agit d'un **indicateur de compromission critique**.
 
 ---
 
-## 5. Email Header Analysis
+## 5. Analyse des en-têtes de l'email
 
-Email headers allow us to identify the **true origin** of a message, regardless of what is displayed to the recipient.
+Les en-têtes d'un email permettent d'identifier l'**origine réelle** d'un message, indépendamment de ce qui est affiché au destinataire.
 
-![Message headers — part 1](03_headers_part1.png)
+![En-têtes du message — partie 1](03_headers_part1.png)
 
-![Message headers — part 2](04_headers_part2.jpg)
+![En-têtes du message — partie 2](04_headers_part2.jpg)
 
-Key fields:
+Champs clés :
 
 ```
 From:        Mailbox <fjose@anyde.com>
 Return-Path: <fjose@anyde.com>
 ```
 
-The message **claims** to come from `anyde.com`.  
-But the authentication checks tell a different story.
+Le message **prétend** provenir de `anyde.com`.  
+Mais les vérifications d'authentification racontent une autre histoire.
 
 ---
 
-## 6. SPF / DKIM / DMARC Explained
+## 6. SPF / DKIM / DMARC expliqués
 
-These three protocols are used to verify the authenticity of an email sender.
+Ces trois protocoles servent à vérifier l'authenticité de l'expéditeur d'un email.
 
 ### SPF (Sender Policy Framework)
 
-**Result observed:**
+**Résultat observé :**
+
 ```
 spf=fail
 ```
 
-SPF checks whether the server that sent the email is **authorized to send on behalf of the domain**.
+Le SPF vérifie si le serveur qui a envoyé l'email est **autorisé à envoyer au nom du domaine**.
 
-> Here, the sending server is **not listed** in `anyde.com`'s SPF record. The domain did not authorize it.
+> Ici, le serveur expéditeur **n'est pas listé** dans l'enregistrement SPF de `anyde.com`. Le domaine ne l'a pas autorisé.
 
 ---
 
 ### DMARC (Domain-based Message Authentication)
 
-**Result observed:**
+**Résultat observé :**
+
 ```
 dmarc=fail
 ```
 
-DMARC checks the **alignment** between the visible sender address and the actual authentication results.
+Le DMARC vérifie l'**alignement** entre l'adresse expéditeur visible et les résultats d'authentification réels.
 
-> A DMARC failure means the sender identity is **likely spoofed**.
+> Un échec DMARC signifie que l'identité de l'expéditeur est **probablement usurpée**.
 
 ---
 
 ### DKIM (DomainKeys Identified Mail)
 
-**Result observed:**
+**Résultat observé :**
+
 ```
 dkim=pass header.d=bttlazer.org
 ```
 
-The message is **signed**, but by `bttlazer.org` — not by `anyde.com`.
+Le message est **signé**, mais par `bttlazer.org` — et non par `anyde.com`.
 
-> This means:
-> - ✅ The email has a valid DKIM signature
-> - ❌ But it is signed by **a domain controlled by the attacker**, not the legitimate sender
+> Cela signifie :
+>
+> * ✅ L'email possède une signature DKIM valide
+> * ❌ Mais il est signé par **un domaine contrôlé par l'attaquant**, et non par l'expéditeur légitime
 
-This is a subtle but important distinction — DKIM pass alone does **not** mean the email is legitimate.
+C'est une distinction subtile mais importante — un DKIM pass seul ne **signifie pas** que l'email est légitime.
 
 ---
 
-## 7. Infrastructure Path
+## 7. Chemin d'infrastructure
 
-The `Received` headers show the **actual journey** of the email through servers.
+Les en-têtes `Received` montrent le **trajet réel** de l'email à travers les serveurs.
 
 ```
 Received: from [47.41.36.219] (helo=mail.bttlazer.org)
   by ironfist.servidorpt.pt
 ```
 
-Then:
+Puis :
 
 ```
 Received: from ironfist.servidorpt.pt
   by protonmail.ch
 ```
 
-### Simplified flow
+### Flux simplifié
 
 ```
-Attacker Host [47.41.36.219]
+Hôte attaquant [47.41.36.219]
          ↓
    mail.bttlazer.org
          ↓
@@ -218,13 +230,14 @@ Attacker Host [47.41.36.219]
        Proton
 ```
 
-> ⚠️ None of these servers belong to Proton's official infrastructure.
+> ⚠️ Aucun de ces serveurs n'appartient à l'infrastructure officielle de Proton.
 
 ---
 
-## 8. Indicators of Compromise (IOC)
+## 8. Indicateurs de Compromission (IOC)
 
-### Domains
+### Domaines
+
 ```
 anyde.com
 bttlazer.org
@@ -233,74 +246,82 @@ ironfist.servidorpt.pt
 mailbox-rsl-recovery-mprtc.vercel.app
 ```
 
-### IP Addresses
+### Adresses IP
+
 ```
 47.41.36.219
 185.32.188.7
 ```
 
-### Authentication Results
+### Résultats d'authentification
+
 ```
 SPF:   fail
 DMARC: fail
-DKIM:  pass (but signed by attacker-controlled domain bttlazer.org)
+DKIM:  pass (mais signé par le domaine de l'attaquant : bttlazer.org)
 ```
 
-### Attack Techniques
+### Techniques d'attaque
+
 ```
-Brand Impersonation
-Credential Phishing
+Usurpation de marque (Brand Impersonation)
+Phishing de credentials
 ```
 
 ---
 
-## 9. SOC Verdict
+## 9. Verdict SOC
 
-> 🔴 **This email is a phishing attempt using Proton brand impersonation.**
+> 🔴 **Cet email est une tentative de phishing par usurpation de la marque Proton.**
 
-| Indicator | Finding |
-|-----------|---------|
-| Sender domain | `anyde.com` — not Proton |
-| SPF | ❌ Fail |
-| DMARC | ❌ Fail |
-| DKIM | ⚠️ Pass, but signed by `bttlazer.org` (attacker domain) |
-| Link destination | `vercel.app` — not Proton |
-| Spam score | 101 (flagged as spam) |
-| Proton alert | Authentication failure warning shown |
+| Indicateur | Constat |
+| --- | --- |
+| Domaine expéditeur | `anyde.com` — pas Proton |
+| SPF | ❌ Échec |
+| DMARC | ❌ Échec |
+| DKIM | ⚠️ Pass, mais signé par `bttlazer.org` (domaine attaquant) |
+| Destination du lien | `vercel.app` — pas Proton |
+| Score spam | 101 (signalé comme spam) |
+| Alerte Proton | Avertissement d'échec d'authentification affiché |
 
-**Likely objective:**  
-> Steal the victim's Proton credentials through a fake security login page.
+**Objectif probable :**
+
+> Voler les identifiants Proton de la victime via une fausse page de connexion.
 
 ---
 
-## 10. SOC Operational Response
+## 10. Réponse opérationnelle SOC
 
-In an enterprise environment, here is how a SOC team would respond:
+Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 
-### 📥 Collection
-- Save the raw email (`.eml` format)
-- Export the full message headers
+### 📥 Collecte
 
-### 🔍 IOC Extraction
-- Extract all domains, IPs, and URLs
-- Submit IOCs to threat intelligence platforms (VirusTotal, AbuseIPDB, etc.)
+* Sauvegarder l'email brut au format `.eml`
+* Exporter les en-têtes complets du message
+
+### 🔍 Extraction des IOC
+
+* Extraire tous les domaines, adresses IP et URLs
+* Soumettre les IOC aux plateformes de threat intelligence (VirusTotal, AbuseIPDB, etc.)
 
 ### 🕵️ Threat Hunting
-Search across the environment for:
-- Other users who received the same email
-- Clicks on the malicious link
-- DNS queries to the identified domains
 
-### 🚧 Containment
-- Block domains at the email gateway
-- Block IPs at the firewall
-- Update email filtering rules
+Rechercher dans l'environnement :
 
-### 🚨 If a user clicked the link
-- Force password reset
-- Revoke all active sessions
-- Enable or enforce MFA
-- Review authentication logs for suspicious activity
+* D'autres utilisateurs ayant reçu le même email
+* Des clics sur le lien malveillant
+* Des requêtes DNS vers les domaines identifiés
 
----
+### 🚧 Confinement
+
+* Bloquer les domaines au niveau de la passerelle email
+* Bloquer les IPs au niveau du pare-feu
+* Mettre à jour les règles de filtrage email
+
+### 🚨 Si un utilisateur a cliqué sur le lien
+
+* Forcer la réinitialisation du mot de passe
+* Révoquer toutes les sessions actives
+* Activer ou renforcer le MFA
+* Analyser les journaux d'authentification pour détecter toute activité suspecte
 
