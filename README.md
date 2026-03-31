@@ -304,14 +304,6 @@ Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 * Extraire tous les domaines, adresses IP et URLs
 * Soumettre les IOC aux plateformes de threat intelligence (VirusTotal, AbuseIPDB, etc.)
 
-### 🕵️ Threat Hunting
-
-Rechercher dans l'environnement :
-
-* D'autres utilisateurs ayant reçu le même email
-* Des clics sur le lien malveillant
-* Des requêtes DNS vers les domaines identifiés
-
 ### 🚧 Confinement
 
 * Bloquer les domaines au niveau de la passerelle email
