@@ -211,7 +211,7 @@ Les en-têtes `Received` montrent le **trajet réel** de l'email à travers les 
 
 ```
 Received: from [47[.]41[.]36[.]219] (helo=mail[.]bttlazer[.]org)
-  by ironfist.servidorpt.pt
+  by ironfist[.]servidorpt[.]pt
 ```
 
 Puis :
