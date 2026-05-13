@@ -293,6 +293,8 @@ Phishing de credentials
 
 > Voler les identifiants Proton de la victime via une fausse page de connexion.
 
+> Exploiter ces identifiants pour ouvrir une porte dérobée, permettant de lancer une attaque plus large.
+
 ---
 
 ## 10. Réponse opérationnelle SOC
