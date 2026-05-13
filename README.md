@@ -55,7 +55,7 @@ Cela signifie que l'**authentification du domaine expéditeur échoue** — un s
 | Signal | Détail |
 | --- | --- |
 | Identité visuelle Proton copiée | Logo et mise en page imités |
-| Fausse alerte de sécurité | "Une nouvelle application a accès à vos données" |
+| Fausse alerte de sécurité | "Une nouvelle application a accès à vos données de messagerie" |
 | Bouton d'action unique | "Security Portal" — crée un sentiment d'urgence |
 | Avertissement d'authentification Proton | Affiché en haut de l'email |
 
