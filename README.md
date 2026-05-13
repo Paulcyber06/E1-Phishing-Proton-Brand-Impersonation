@@ -1,6 +1,6 @@
 # Analyse de Phishing — Usurpation de la Marque Proton
 
-> Dans ce write-up, j'analyse un email de phishing qui usurpe l'identité de **Proton**, dans le but de voler les identifiants d'un employé.
+> Premier incident détecté dans une série d'attaques contre **Buttercup Games** — analyse d'un email de phishing usurpant la marque **Proton for Business**.
 
 ---
 
