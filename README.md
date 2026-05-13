@@ -1,6 +1,6 @@
 # Analyse de Phishing — Usurpation de la Marque Proton
 
-> Dans ce write-up, j'analyse un email de phishing qui usurpe l'identité de **Proton**, dans le but de voler les identifiants de la victime.
+> Dans ce write-up, j'analyse un email de phishing qui usurpe l'identité de **Proton**, dans le but de voler les identifiants d'un employé.
 
 ---
 
