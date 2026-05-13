@@ -329,4 +329,4 @@ Pour des raisons de confidentialité, le fichier original n'est pas mis à dispo
 
 ---
 
-*© Paulcyber06 — Tous droits réservés. Reproduction interdite sans autorisation.*
+*© Paulcyber06 — Tous droits réservés.*
