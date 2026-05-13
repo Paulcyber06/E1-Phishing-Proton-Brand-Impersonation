@@ -109,7 +109,7 @@ En inspectant le code source HTML du bouton :
 ![Code source HTML montrant le lien malveillant](02_html_source.jpg)
 
 ```
-<a href="https://mailbox-rsl-recovery-mprtc.vercel.app/account/xpm-privacy-panel/?email=...">
+<a hxxps[://]mailbox-rsl-recovery-mprtc[.]vercel[.]app/account/xpm-privacy-panel/?email=.">
   Security Portal
 </a>
 ```
