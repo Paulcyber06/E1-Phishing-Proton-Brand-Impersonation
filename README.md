@@ -21,7 +21,11 @@
 
 ## 1. Contexte
 
-Cette analyse est basée sur un **email suspect reçu dans une boîte Proton**.
+Un employé de **Buttercup Games** signale un email suspect reçu dans sa boîte Proton. L'attaquant, ayant eu connaissance que la société utilise la plateforme ProtonMail for business, a usurpé son identité pour tenter de voler les credentials d'un employé.
+
+La tentative échoue — l'employé ne clique pas sur le lien. L'email est transmis au SOC pour analyse.
+
+Cet incident est le **point de départ d'une série d'attaques** contre Buttercup Games. Le même acteur malveillant sera retrouvé dans les investigations suivantes.
 
 Le message affirme :
 
