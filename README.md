@@ -203,7 +203,7 @@ Le message est **signé**, mais par `bttlazer[.]org` — et non par `anyde[.]com
 
 C'est une distinction subtile mais importante — un DKIM pass seul ne **signifie pas** que l'email est légitime. Aujourd'hui, les attaques de phishing sont de plus en plus sophistiquées, et il devient parfois difficile, à première vue, de  repérer qu'il s'agit d'une tentative malveillante, tant elles sont bien conçues.
 
-De plus, il ne faut pas se fier uniquement à la validité du DKIM ou du SPF, car un attquant peut aisément enregistrer un domaine et ainsi contourner ces vérifications.
+De plus, il ne faut pas se fier uniquement à la validité du DKIM ou du SPF, car un attaquant peut aisément enregistrer un domaine et ainsi contourner ces vérifications.
 
 ---
 
