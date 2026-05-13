@@ -191,7 +191,7 @@ Le DMARC vérifie l'**alignement** entre l'adresse expéditeur visible et les r�
 **Résultat observé :**
 
 ```
-dkim=pass header.d=bttlazer[.]org
+dkim=pass header[.]d=bttlazer[.]org
 ```
 
 Le message est **signé**, mais par `bttlazer[.]org` — et non par `anyde[.]com`.
