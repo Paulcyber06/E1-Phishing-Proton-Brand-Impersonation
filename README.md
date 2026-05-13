@@ -218,7 +218,7 @@ Puis :
 
 ```
 Received: from ironfist[.]servidorpt[.]pt
-  by protonmail.ch
+  by XXX@protonmail[.]ch
 ```
 
 ### Flux simplifié
@@ -244,9 +244,9 @@ Hôte attaquant [47[.]41[.]36[.]219]
 ```
 anyde[.]com
 bttlazer[.]org
-mail.bttlazer[.]org
-ironfist.servidorpt[.]pt
-mailbox-rsl-recovery-mprtc[.]vercel[.]app
+mail[.]bttlazer[.]org
+ironfist[.]servidorpt[.]pt
+mailbox[-]rsl[-]recovery[-]mprtc[.]vercel[.]app
 ```
 
 ### Adresses IP
