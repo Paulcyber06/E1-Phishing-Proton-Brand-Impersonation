@@ -20,7 +20,7 @@
 
 ## 1. Contexte
 
-Un employé de **Buttercup Games**, basé à Genève, signale un email suspect reçu dans sa boîte Proton. L'attaquant, ayant eu connaissance que la société utilise la plateforme ProtonMail for business, a usurpé son identité pour tenter de voler les credentials d'un employé.
+Un employé de **Buttercup Games**, compagnie basée à Genève, signale un email suspect reçu dans sa boîte Proton. L'attaquant, ayant eu connaissance que la société utilise la plateforme ProtonMail for business, a usurpé son identité pour tenter de voler les credentials d'un employé.
 
 La tentative échoue — l'employé ne clique pas sur le lien. L'email est transmis au SOC pour analyse.
 
