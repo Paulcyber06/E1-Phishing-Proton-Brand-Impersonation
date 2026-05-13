@@ -328,3 +328,5 @@ L'email analysé dans cet article est un cas réel de phishing détecté dans un
 Pour des raisons de confidentialité, le fichier original n'est pas mis à disposition.
 
 
+
+*© Paulcyber06 — Tous droits réservés. Reproduction interdite sans autorisation.*
