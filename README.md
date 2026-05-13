@@ -20,7 +20,7 @@
 
 ## 1. Contexte
 
-Un employé de **Buttercup Games**, compagnie basée à Genève, signale un email suspect reçu dans sa boîte Proton. L'attaquant, ayant eu connaissance que la société utilise la plateforme ProtonMail for business, a usurpé son identité pour tenter de voler les credentials d'un employé.
+Un employé de **Buttercup Games**, compagnie qui réalise des Jeux vidéo basée à Genève, signale un email suspect reçu dans sa boîte Proton. L'attaquant, ayant eu connaissance que la société utilise la plateforme ProtonMail for business sans domaine personalisé, a usurpé son identité pour tenter de voler les credentials d'un employé.
 
 La tentative échoue — l'employé ne clique pas sur le lien. L'email est transmis au SOC pour analyse.
 
@@ -36,7 +36,7 @@ Le destinataire est invité à cliquer sur un bouton intitulé :
 Security Portal
 ```
 
-Cependant, Proton affiche immédiatement une alerte :
+Cependant, nous pouvons voir que Proton affiche immédiatement une alerte :
 
 > **Cet email n'a pas satisfait aux exigences d'authentification de son domaine.**
 
@@ -61,6 +61,7 @@ Cela signifie que l'**authentification du domaine expéditeur échoue** — un s
 
 > Il s'agit d'une technique de phishing classique : **créer un sentiment d'urgence autour de la sécurité du compte** pour pousser la victime à agir sans réfléchir.
 
+Notons que le corps de l'email est crédible, ce qui peut inciter une personne travaillant dans la société à cliquer sans trop réfléchir. 
 ---
 
 ## 3. Analyse du contenu de l'email
