@@ -106,13 +106,13 @@ C'est une **caractéristique typique du phishing**.
 
 En inspectant le code source HTML du bouton :
 
-![Code source HTML montrant le lien malveillant](02_html_source.jpg)
-
 ```
 <a hxxps[://]mailbox-rsl-recovery-mprtc[.]vercel[.]app/account/xpm-privacy-panel/?email=.">
   Security Portal
 </a>
 ```
+![Code source HTML montrant le lien malveillant](02_html_source.jpg)
+
 
 Le lien pointe vers :
 
