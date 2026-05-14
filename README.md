@@ -140,9 +140,12 @@ Il s'agit d'un **indicateur de compromission critique**.
 
 Les en-têtes d'un email permettent d'identifier l'**origine réelle** d'un message, indépendamment de ce qui est affiché au destinataire.
 
+![Code source HTML montrant le lien malveillant](02_html_source.jpg)
+
 ![En-têtes du message — partie 1](03_headers_part1.png)
 
 ![En-têtes du message — partie 2](04_headers_part2.jpg)
+
 
 Champs clés :
 
