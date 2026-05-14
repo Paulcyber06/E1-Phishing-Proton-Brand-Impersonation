@@ -299,7 +299,6 @@ Phishing de credentials
 | DMARC | ❌ Échec |
 | DKIM | ⚠️ Pass, mais signé par `bttlazer[.]org` (domaine attaquant) |
 | Destination du lien | `vercel[.]app` — pas Proton |
-| Score spam | 101 (signalé comme spam) |
 | Alerte Proton | Avertissement d'échec d'authentification affiché |
 
 **Objectif probable :**
