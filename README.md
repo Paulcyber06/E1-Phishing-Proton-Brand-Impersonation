@@ -305,7 +305,7 @@ Phishing de credentials
 
 > Voler les identifiants Proton de la victime via une fausse page de connexion.
 
-> > Exploiter ces identifiants pour accéder aux communications internes de la victime et potentiellement pivoter vers d'autres systèmes de l'organisation.
+> Exploiter ces identifiants pour accéder aux communications internes de la victime et potentiellement pivoter vers d'autres systèmes de l'organisation.
 
 ---
 
