@@ -282,6 +282,7 @@ DKIM:  pass (mais signé par le domaine de l'attaquant : bttlazer[.]org)
 
 ```
 Usurpation de marque (Brand Impersonation)
+
 Phishing de credentials
 ```
 
