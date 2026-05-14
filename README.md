@@ -338,6 +338,18 @@ Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 
 
 
+---
+
+## 🔗 Navigation
+
+| ⬅️ Épisode précédent | ➡️ Épisode suivant |
+|---|---|
+| — | [E2 — Splunk : Détection de Reconnaissance](https://github.com/Paulcyber06/E2-Splunk-Recognition-Detection) |
+
+
+
+
+
 ## 📁 Reproduire cette analyse
 
 L'email analysé dans cet article est un cas réel de phishing détecté dans une boîte personnelle.
