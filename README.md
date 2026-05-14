@@ -305,6 +305,8 @@ Phishing de credentials
 
 > 🔴 **Cet email est une tentative de phishing par usurpation de la marque Proton.**
 
+<br>
+
 | Indicateur | Constat |
 | --- | --- |
 | Domaine expéditeur | `anyde[.]com` — pas Proton |
@@ -313,6 +315,8 @@ Phishing de credentials
 | DKIM | ⚠️ Pass, mais signé par `bttlazer[.]org` (domaine attaquant) |
 | Destination du lien | `vercel[.]app` — pas Proton |
 | Alerte Proton | Avertissement d'échec d'authentification affiché |
+
+<br>
 
 **Objectif probable :**
 
