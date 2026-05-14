@@ -26,7 +26,7 @@ La tentative échoue — l'employé ne clique pas sur le lien. L'email est trans
 
 Cet incident est le **point de départ d'une série d'attaques** contre Buttercup Games. Le même acteur malveillant sera retrouvé dans les investigations suivantes.
 
-Le message affirme :
+Le message affirme en anglais :
 
 > *"Une nouvelle application a accès à vos données de messagerie"*
 
