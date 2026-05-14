@@ -354,15 +354,18 @@ Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 * Analyser les journaux d'authentification pour détecter toute activité suspecte
 
 
+<br>
 
 <div align="center">
-<br>
+
 
 [![⬅️ Retour au profil](https://img.shields.io/badge/⬅️%20Retour--grey?style=for-the-badge)](https://github.com/Paulcyber06)
 [![➡️ Suivant](https://img.shields.io/badge/➡️%20Suivant--grey?style=for-the-badge)](https://github.com/Paulcyber06/E2-Splunk-Recognition-Detection)
 
-<br>
+
 </div>
+
+<br>
 
 
 
