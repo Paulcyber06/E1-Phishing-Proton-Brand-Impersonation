@@ -61,7 +61,7 @@ Cela signifie que l'**authentification du domaine expéditeur échoue** — un s
 
 > Il s'agit d'une technique de phishing classique : **créer un sentiment d'urgence autour de la sécurité du compte** pour pousser la victime à agir sans réfléchir.
 
-> Notons que le corps de l'email est crédible, ce qui peut inciter une personne travaillant dans la société à cliquer sans trop réfléchir.
+> Notons que le corps de l'email est crédible, ce qui peut inciter un employé à cliquer sans trop réfléchir.
 
 ---
 
