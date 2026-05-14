@@ -340,13 +340,13 @@ Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 
 ---
 
+---
+
 ## 🔗 Navigation
 
-| ⬅️ Épisode précédent | ➡️ Épisode suivant |
+| ⬅️ Profil | ➡️ Épisode suivant |
 |---|---|
-| — | [E2 — Splunk : Détection de Reconnaissance](https://github.com/Paulcyber06/E2-Splunk-Recognition-Detection) |
-
-
+| [← Retour au profil](https://github.com/Paulcyber06) | [E2 — Splunk : Détection de Reconnaissance](https://github.com/Paulcyber06/E2-Splunk-Recognition-Detection) |
 
 
 
