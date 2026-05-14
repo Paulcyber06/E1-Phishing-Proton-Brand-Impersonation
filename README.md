@@ -339,17 +339,17 @@ Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 
 ---
 
+
+
 <div align="center">
 
----
-
-### 🔗 Navigation
-
-| ⬅️ Profil | ➡️ Épisode suivant |
-|:---:|:---:|
-| [← Retour au profil](https://github.com/Paulcyber06) | [E2 — Splunk : Détection de Reconnaissance →](https://github.com/Paulcyber06/E2-Splunk-Recognition-Detection) |
+[![⬅️ Retour au profil](https://img.shields.io/badge/⬅️%20Retour-Profil-grey?style=for-the-badge)](https://github.com/Paulcyber06)
+[![➡️ Épisode suivant](https://img.shields.io/badge/➡️%20Suivant-E2%20Détection%20Reconnaissance-blue?style=for-the-badge)](https://github.com/Paulcyber06/E2-Splunk-Recognition-Detection)
 
 </div>
+
+
+
 
 ---
 
