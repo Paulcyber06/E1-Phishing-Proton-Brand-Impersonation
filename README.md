@@ -210,6 +210,7 @@ Le message est **signé**, mais par `bttlazer[.]org` — et non par `anyde[.]com
 
 > * ❌ Mais il est signé par **un domaine contrôlé par l'attaquant**, et non par l'expéditeur légitime
 
+
 C'est une distinction subtile mais importante — un DKIM pass seul ne **signifie pas** que l'email est légitime.
 
 Aujourd'hui, les attaques de phishing sont de plus en plus sophistiquées, et il devient parfois difficile, à première vue, de  repérer qu'il s'agit d'une tentative malveillante, tant elles sont bien conçues.
