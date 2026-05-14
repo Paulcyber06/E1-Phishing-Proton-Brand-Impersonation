@@ -337,17 +337,21 @@ Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 * Analyser les journaux d'authentification pour détecter toute activité suspecte
 
 
+---
+
+<div align="center">
 
 ---
 
----
-
-## 🔗 Navigation
+### 🔗 Navigation
 
 | ⬅️ Profil | ➡️ Épisode suivant |
-|---|---|
-| [← Retour au profil](https://github.com/Paulcyber06) | [E2 — Splunk : Détection de Reconnaissance](https://github.com/Paulcyber06/E2-Splunk-Recognition-Detection) |
+|:---:|:---:|
+| [← Retour au profil](https://github.com/Paulcyber06) | [E2 — Splunk : Détection de Reconnaissance →](https://github.com/Paulcyber06/E2-Splunk-Recognition-Detection) |
 
+</div>
+
+---
 
 
 ## 📁 Reproduire cette analyse
