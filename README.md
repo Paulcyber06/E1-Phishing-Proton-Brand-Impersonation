@@ -48,7 +48,11 @@ Cela signifie que l'**authentification du domaine expéditeur échoue** — un s
 
 À l'ouverture de l'email, plusieurs éléments attirent immédiatement l'attention.
 
+<br>
+
 ![Email de phishing imitant Proton](01_phishing_email.jpg)
+
+<br>
 
 ### Signaux visibles
 
@@ -120,7 +124,11 @@ Le lien pointe vers :
 ```
 vercel[.]app
 ```
+<br>
+
 ![Code source HTML montrant le lien malveillant](02_html_source.jpg)
+
+<br>
 
 > ⚠️ **Proton n'utilise pas ce domaine.** Il s'agit d'une plateforme externe utilisée pour héberger des pages frauduleuses.
 
@@ -141,11 +149,16 @@ Il s'agit d'un **indicateur de compromission critique**.
 Les en-têtes d'un email permettent d'identifier l'**origine réelle** d'un message, indépendamment de ce qui est affiché au destinataire.
 
 
+<br>
 
 ![En-têtes du message — partie 1](03_headers_part1.png)
+<br>
+
+<br>
 
 ![En-têtes du message — partie 2](04_headers_part2.jpg)
 
+<br>
 
 Champs clés :
 
