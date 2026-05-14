@@ -158,7 +158,7 @@ Le message **prétend** provenir de `anyde[.]com`.
 
 Mais les vérifications d'authentification racontent une autre histoire. 
 
-Nous pouvons lire que le mail est a été signé par le domaine de l'attaquant qui est : bttlazer[.]org
+Nous pouvons lire que le mail a été signé par `bttlazer[.]org` — domaine qui ne correspond ni à l'expéditeur apparent `anyde[.]com`, ni à l'infrastructure officielle de Proton, ce qui trahit l'origine réelle du message.
 
 ---
 
@@ -305,7 +305,7 @@ Phishing de credentials
 
 > Voler les identifiants Proton de la victime via une fausse page de connexion.
 
-> Exploiter ces identifiants pour ouvrir une porte dérobée, permettant de lancer une attaque plus large.
+> > Exploiter ces identifiants pour accéder aux communications internes de la victime et potentiellement pivoter vers d'autres systèmes de l'organisation.
 
 ---
 
