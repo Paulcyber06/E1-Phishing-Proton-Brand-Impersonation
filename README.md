@@ -106,7 +106,7 @@ C'est une **caractéristique typique du phishing**.
 
 ## 4. Analyse du lien malveillant
 
-En inspectant le code source HTML du bouton :
+En inspectant le code source HTML du bouton d'action "Security Portal" :
 
 ```
 <a hxxps[://]mailbox-rsl-recovery-mprtc[.]vercel[.]app/account/xpm-privacy-panel/?email=.">
@@ -120,6 +120,7 @@ Le lien pointe vers :
 ```
 vercel[.]app
 ```
+![Code source HTML montrant le lien malveillant](02_html_source.jpg)
 
 > ⚠️ **Proton n'utilise pas ce domaine.** Il s'agit d'une plateforme externe utilisée pour héberger des pages frauduleuses.
 
