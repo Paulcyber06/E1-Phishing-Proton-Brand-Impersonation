@@ -155,7 +155,10 @@ Return-Path: <fjose[@]anyde[.]com>
 ```
 
 Le message **prétend** provenir de `anyde[.]com`.  
-Mais les vérifications d'authentification racontent une autre histoire. Nous pouvons lire que le mail est a été signé par le domaine de l'attaquant qui est : bttlazer[.]org
+
+Mais les vérifications d'authentification racontent une autre histoire. 
+
+Nous pouvons lire que le mail est a été signé par le domaine de l'attaquant qui est : bttlazer[.]org
 
 ---
 
