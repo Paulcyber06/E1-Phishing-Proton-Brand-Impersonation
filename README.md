@@ -113,7 +113,6 @@ En inspectant le code source HTML du bouton :
   Security Portal
 </a>
 ```
-![Code source HTML montrant le lien malveillant](02_html_source.jpg)
 
 
 Le lien pointe vers :
