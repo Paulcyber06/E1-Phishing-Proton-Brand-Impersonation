@@ -337,7 +337,6 @@ Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 * Analyser les journaux d'authentification pour détecter toute activité suspecte
 
 
----
 
 
 <div align="center">
