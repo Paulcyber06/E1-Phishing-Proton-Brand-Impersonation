@@ -20,7 +20,7 @@
 
 ## 1. Contexte
 
-Un employé de **Buttercup Games**, petite compagnie qui réalise des Jeux vidéo basée à Genève, signale un email suspect reçu dans sa boîte Proton. L'attaquant, ayant eu connaissance que la société utilise la plateforme ProtonMail, a usurpé son identité pour tenter de voler les credentials d'un employé.
+Un employé de **Buttercup Games**, petite compagnie qui réalise des Jeux vidéo basée à Genève, signale un email suspect reçu par un de ses employés dans sa boîte Mail. L'attaquant, ayant eu connaissance que la société utilise la plateforme Proton, a usurpé son identité pour tenter de voler les credentials d'un employé.
 
 La tentative échoue. L'employé ne clique pas sur le lien. L'email est transmis au MSSP en charge de l'analyse.
 
@@ -36,11 +36,11 @@ Le destinataire est invité à cliquer sur un bouton intitulé :
 Security Portal
 ```
 
-Cependant, nous pouvons voir que Proton affiche immédiatement une alerte :
+Cependant, nous pouvons voir que Proton affiche immédiatement une alerte dans l'en-tête du Mail :
 
 > **Cet email n'a pas satisfait aux exigences d'authentification de son domaine.**
 
-Cela signifie que l'**authentification du domaine expéditeur échoue**: un signal d'alerte évident.
+Cela signifie que l'**authentification du domaine expéditeur échoue**.
 
 ---
 
@@ -62,7 +62,7 @@ Cela signifie que l'**authentification du domaine expéditeur échoue**: un sign
 | --- | --- |
 | Identité visuelle Proton copiée | Logo et mise en page imités |
 | Fausse alerte de sécurité | "Une nouvelle application a accès à vos données de messagerie" |
-| Bouton d'action unique | "Security Portal" — crée un sentiment d'urgence |
+| Bouton d'action unique | "Security Portal" cherche à créer un sentiment d'urgence |
 | Avertissement d'authentification Proton | Affiché en haut de l'email |
 
 <br>
@@ -99,15 +99,15 @@ Les emails officiels de Proton sont systématiquement relus avant envoi.
 Un vrai email de sécurité de Proton inclurait :
 
 * L'heure de connexion
-* Le nom de l'appareil
-* La localisation
+* Le nom de l'appareil qui s'est connecté
+* La localisation de celui-ci
 * Le nom de l'application concernée
 
 **Aucun de ces éléments n'est présent.**
 
 #### ❌ Appel à l'action unique
 
-L'utilisateur est poussé à cliquer immédiatement.  
+L'utilisateur est uniquement poussé à cliquer immédiatement sur le bouton.  
 C'est une **caractéristique typique du phishing**.
 
 ---
@@ -123,7 +123,7 @@ En inspectant le code source HTML du bouton d'action "Security Portal" :
 ```
 
 
-Le lien pointe vers :
+Nous remarquons que le lien pointe vers :
 
 ```
 vercel[.]app
@@ -173,13 +173,13 @@ Return-Path: <fjose[@]anyde[.]com>
 
 Le message **prétend** provenir de `anyde[.]com`.  
 
-Mais les vérifications d'authentification racontent une autre histoire. 
+Mais les vérifications d'authentification ne disent pas la même chose. 
 
-Nous pouvons lire que le mail a été signé par `bttlazer[.]org` — domaine qui ne correspond ni à l'expéditeur apparent `anyde[.]com`, ni à l'infrastructure officielle de Proton, ce qui trahit l'origine réelle du message.
+Nous pouvons lire que le mail a été signé par `bttlazer[.]org`, domaine qui ne correspond ni à l'expéditeur apparent `anyde[.]com`, ni à l'infrastructure officielle de Proton, ce qui trahit l'origine réelle du message.
 
 ---
 
-## 6. SPF / DKIM / DMARC expliqués
+## 6. SPF / DKIM / DMARC 
 
 Ces trois protocoles servent à vérifier l'authenticité de l'expéditeur d'un email.
 
@@ -219,13 +219,13 @@ Le DMARC vérifie l'**alignement** entre l'adresse expéditeur visible et les r�
 dkim=pass header[.]d=bttlazer[.]org
 ```
 
-Le message est **signé**, mais par `bttlazer[.]org` — et non par `anyde[.]com`.
+Le message est **signé**, mais par `bttlazer[.]org` et non par `anyde[.]com`.
 
 > Cela signifie :
->
+
 > * ✅ L'email possède une signature DKIM valide
 
-> * ❌ Mais il est signé par **un domaine contrôlé par l'attaquant**, et non par l'expéditeur légitime
+> * ❌ Mais il est signé par **un domaine contrôlé par l'attaquant**, et non par l'expéditeur légitime.
 
 
 C'est une distinction subtile mais importante — un DKIM pass seul ne **signifie pas** que l'email est légitime.
@@ -317,8 +317,8 @@ Phishing de credentials
 | SPF | ❌ Échec |
 | DMARC | ❌ Échec |
 | DKIM | ⚠️ Pass, mais signé par `bttlazer[.]org` (domaine attaquant) |
-| Destination du lien | `vercel[.]app` — pas Proton |
-| Alerte Proton | Avertissement d'échec d'authentification affiché |
+| Destination du lien | `vercel[.]app` et non Proton |
+| Alerte Proton | Avertissement d'échec d'authentification affiché dans l'en-tête|
 
 <br>
 
