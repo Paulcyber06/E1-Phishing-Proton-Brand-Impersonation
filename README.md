@@ -376,9 +376,6 @@ Dans un environnement d'entreprise, voici comment une équipe SOC répondrait :
 ---
 
 
-## 📁 Reproduire cette analyse
-
 L'email analysé dans cet article est un cas réel de phishing détecté dans une boîte personnelle.
-Pour des raisons de confidentialité, le fichier original n'est pas mis à disposition.
 
 *© Paulcyber06 — Tous droits réservés.*
