@@ -1,5 +1,5 @@
 # Épisode 1 — Phishing : Usurpation de la Marque Proton
-> Premier incident détecté dans une série d'attaques contre **Buttercup Games** — analyse d'un email de phishing usurpant la marque **Proton**.
+> Premier incident détecté dans une série d'attaques contre **Buttercup Games** : analyse d'un email de phishing usurpant la marque **Proton**.
 
 ---
 
@@ -22,7 +22,7 @@
 
 Un employé de **Buttercup Games**, petite compagnie qui réalise des Jeux vidéo basée à Genève, signale un email suspect reçu dans sa boîte Proton. L'attaquant, ayant eu connaissance que la société utilise la plateforme ProtonMail, a usurpé son identité pour tenter de voler les credentials d'un employé.
 
-La tentative échoue — l'employé ne clique pas sur le lien. L'email est transmis au MSSP en charge de l'analyse.
+La tentative échoue. L'employé ne clique pas sur le lien. L'email est transmis au MSSP en charge de l'analyse.
 
 Cet incident est le **point de départ d'une série d'attaques** contre Buttercup Games. Le même acteur malveillant sera retrouvé dans les investigations suivantes.
 
@@ -40,7 +40,7 @@ Cependant, nous pouvons voir que Proton affiche immédiatement une alerte :
 
 > **Cet email n'a pas satisfait aux exigences d'authentification de son domaine.**
 
-Cela signifie que l'**authentification du domaine expéditeur échoue** — un signal d'alerte évident.
+Cela signifie que l'**authentification du domaine expéditeur échoue**: un signal d'alerte évident.
 
 ---
 
