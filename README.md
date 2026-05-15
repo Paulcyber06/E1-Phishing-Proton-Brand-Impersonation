@@ -60,10 +60,10 @@ Cela signifie que l'**authentification du domaine expéditeur échoue**.
 
 | Signal | Détail |
 | --- | --- |
-| Identité visuelle Proton copiée | Logo et mise en page imités |
-| Fausse alerte de sécurité | "Une nouvelle application a accès à vos données de messagerie" |
-| Bouton d'action unique | "Security Portal" cherche à créer un sentiment d'urgence |
-| Avertissement d'authentification Proton | Affiché en haut de l'email |
+| 1 |Identité visuelle Proton copiée | Logo et mise en page imités |
+| 2 |Fausse alerte de sécurité | "Une nouvelle application a accès à vos données de messagerie" |
+| 3 | Bouton d'action unique | "Security Portal" cherche à créer un sentiment d'urgence |
+| 4 | Avertissement d'authentification Proton | Affiché en haut de l'email |
 
 <br>
 
